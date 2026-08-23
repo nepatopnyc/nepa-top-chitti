@@ -1097,7 +1097,9 @@ return getSubtotal() *
 tipRate;
 
 }
-
+function getTaxAmount(){
+  return getSubtotal() * 0.08875;
+}
 function getGrandTotal(){
 return getSubtotal() + getTaxAmount() + getTipAmount();
 }
