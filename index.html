@@ -1098,11 +1098,8 @@ tipRate;
 
 }
 
-
 function getGrandTotal(){
-
-return getSubtotal() + getTipAmount();
-
+return getSubtotal() + getTaxAmount() + getTipAmount();
 }
 
 
@@ -1173,19 +1170,32 @@ updateTotals();
 function updateTotals(){
 
 const subtotal =
+
 getSubtotal();
 
+const tax =
+
+gettaxamount();
+
 const tip =
+
 getTipAmount();
 
 const total =
-subtotal + tip;
+
+subtotal + tax + tip;
 
 document
 .getElementById("subtotal")
 .textContent =
 money(subtotal);
+  
+document
 
+.getElementByid("taxamount")
+.textContent =
+money(tax);
+  
 document
 .getElementById("tipAmount")
 .textContent =
